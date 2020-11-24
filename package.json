@@ -1,0 +1,8 @@
+{
+  "name": "ltco-bauminas",
+  "version": "1.0.0",
+  "description": "Theme WordPress for Bauminas by LTCO",
+  "main": "index.js",
+  "author": "Leônidas Santos <oi@ltco.com.br>",
+  "license": "MIT"
+}
