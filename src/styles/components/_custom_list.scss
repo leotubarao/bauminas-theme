@@ -1,0 +1,41 @@
+.ltco_lists {
+  list-style: none;
+  padding-left: 1rem;
+  position: relative;
+  z-index: 1;
+
+  > li {
+    position: relative;
+    padding-left: 1rem;
+
+    & + * {
+      margin-top: 0.75rem;
+    }
+
+    &:before {
+      content: '-';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+  }
+
+  a {
+    @extend .ltco_destak;
+    margin-left: -1rem;
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding-left: 2rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-left: 3rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-left: 4rem;
+  }
+}

@@ -1,0 +1,58 @@
+.ltco_navbar_top {
+  background-color: ltco_color();
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  .container {
+    margin-top: -0.75rem;
+
+    > * {
+      margin-top: 0.75rem;
+    }
+  }
+
+  &__search {
+    order: 0;
+
+    @include media-breakpoint-only(sm) {
+      width: 210px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      width: 100%;
+      order: 1;
+    }
+  }
+
+  &__languages {
+    display: flex;
+    align-items: center;
+
+    @include media-breakpoint-up(sm) {
+      margin-left: auto;
+      margin-right: 0.75rem;
+      padding-right: 0.75rem;
+      border-right: 1px solid ltco_color('white');
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-right: 2rem;
+      padding-right: 2rem;
+    }
+
+    > span {
+      color: ltco_color('white');
+      letter-spacing: .5px;
+    }
+
+    > * + * {
+      margin-left: 0.5rem;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    &__social .ltco_social > * + * {
+      margin-left: 0.5rem;
+    }
+  }
+}
