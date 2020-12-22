@@ -12,7 +12,7 @@ function ltco_thumbnail_image( $id = null ) {
 
   $ancestors = get_ancestors( get_the_ID($post->ID), 'page' );
   $post_data = get_post( $ancestors[0] );
-  $id = ( in_array(43, $ancestors) ) ? $id : $post_data->ID;
+  $id = ( $id || in_array(43, $ancestors) ) ? $id : $post_data->ID;
 
   if ( is_singular('products') ) return;
 
