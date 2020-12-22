@@ -37,7 +37,7 @@
       <div class="ltco_home__triade__wrapper__item">
         <h3 class="h2"><?= ltco_translate($translate['grupo']['title']); ?></h3>
         <p><?= ltco_translate($translate['grupo']['description']); ?></p>
-        <a href="<?= get_permalink(43); ?>" class="ltco_destak">
+        <a href="<?= get_permalink(45); ?>" class="ltco_destak">
           <?= ltco_translate($translate['grupo']['button']); ?>
         </a>
       </div>
