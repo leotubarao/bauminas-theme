@@ -49,7 +49,7 @@
     height: 280px;
   }
 
-  .page &:before {
+  .page &.ltco_has_thumb:before {
     background-color: ltco_color('grayblue');
     content: '';
     position: absolute;
