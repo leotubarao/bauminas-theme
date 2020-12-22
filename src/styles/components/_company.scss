@@ -1,6 +1,11 @@
 .ltco_company {
   background-color: ltco_color('gray-100');
 
+  > .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
   &__heading {
     font-weight: normal;
   }

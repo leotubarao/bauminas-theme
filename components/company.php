@@ -1,6 +1,6 @@
 <?php $translate = $GLOBALS['ltco_translate']['company']; ?>
 <div class="ltco_company">
-  <div class="container py-5">
+  <div class="container">
     <?php if (is_front_page()) : ?>
     <p class="ltco_company__heading h5 text-dark mb-4"><?= ltco_translate(...$translate['title']); ?></p>
     <?php endif; ?>

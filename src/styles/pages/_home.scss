@@ -20,7 +20,7 @@
 
     &__image {
       width: 100%;
-      min-height: 300px;
+      min-height: 200px;
       background-color: ltco_color();
       background-repeat: no-repeat;
       background-position: center center;
@@ -76,7 +76,7 @@
 
     @include media-breakpoint-up(md) {
       &__image {
-        min-height: 400px;
+        min-height: 300px;
         grid-area: 1/1/1/6;
       }
 
@@ -97,7 +97,7 @@
 
     @include media-breakpoint-up(lg) {
       &__image {
-        min-height: 500px;
+        min-height: 400px;
         grid-area: 1/1/1/6;
       }
 
@@ -118,6 +118,7 @@
 
   &__triade {
     background-color: ltco_color('gray-100');
+    padding: 2rem 0;
 
     .divisor {
       background-color: ltco_color('gray-900');
@@ -134,7 +135,7 @@
     }
 
     &__wrapper {
-      margin-top: -3rem;
+      margin-top: -2rem;
       @extend .container-fluid;
       display: flex;
       flex-wrap: wrap;
@@ -165,7 +166,7 @@
 
       &__item,
       .divisor {
-        margin-top: 3rem;
+        margin-top: 2rem;
       }
     }
   }

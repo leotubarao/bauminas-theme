@@ -7,9 +7,9 @@ $this: ltco_cta_units;
     @include make-container-grid-layout(4);
   }
 
-  /* @include media-breakpoint-up(xxl) {
+  @include media-breakpoint-up(xxl) {
     @include make-container-grid-layout(3);
-  } */
+  }
 
   &__container {
     background-color: ltco_color();

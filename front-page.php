@@ -32,7 +32,7 @@
     </div>
   </div>
 
-  <div class="ltco_home__triade py-5">
+  <div class="ltco_home__triade">
     <div class="ltco_home__triade__wrapper">
       <div class="ltco_home__triade__wrapper__item">
         <h3 class="h2"><?= ltco_translate($translate['grupo']['title']); ?></h3>
