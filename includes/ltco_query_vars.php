@@ -2,8 +2,7 @@
 $GLOBALS['ltco_query'] = [
   ['tax','line-products'],
   ['tax','type-products'],
-  ['meta','sanitation'],
-  ['meta','industrial']
+  ['tax','segment-products']
 ];
 
 function ltco_search_scripts() {

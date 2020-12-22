@@ -14,7 +14,8 @@
 <section class="ltco_unidades__lists">
   <?php while ( $query->have_posts() ) : $query->the_post(); ?>
   <div class="ltco_unidades__lists__item">
-    <figure <?= ltco_thumbnail_image(); ?>></figure>
+    <figure <?= ( ltco_thumbnail_post() ) ?: ltco_thumbnail_post('ref'); ?>></figure>
+
 
     <h3 class="h4"><?php the_title(); ?></h3>
 

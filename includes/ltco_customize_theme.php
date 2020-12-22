@@ -10,8 +10,8 @@ if ( function_exists('acf_add_options_page') ) {
   ) );
 
   acf_add_options_sub_page( array(
-    'page_title'	=> 'Imagens do Cabeçalho',
-    'menu_title'	=> 'Imagens do Cabeçalho',
+    'page_title'	=> 'Carousel',
+    'menu_title'	=> 'Carousel',
     'parent_slug'	=> 'ltco-settings',
   ) );
 
@@ -30,78 +30,6 @@ if ( function_exists('acf_add_options_page') ) {
 }
 
 if ( function_exists('acf_add_local_field_group') ) {
-
-  acf_add_local_field_group(array(
-    'key' => 'group_5d82933aa37bd',
-    'title' => 'Imagens do Cabeçalho',
-    'fields' => array(
-      array(
-        'key' => 'field_5d829341bf078',
-        'label' => 'Imagem 404',
-        'name' => 'ltco_banners__404',
-        'type' => 'image',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '50',
-          'class' => '',
-          'id' => '',
-        ),
-        'return_format' => 'url',
-        'preview_size' => 'medium',
-        'library' => 'all',
-        'min_width' => '',
-        'min_height' => '',
-        'min_size' => '',
-        'max_width' => '',
-        'max_height' => '',
-        'max_size' => '',
-        'mime_types' => '',
-      ),
-      array(
-        'key' => 'field_5d829372bf079',
-        'label' => 'Imagem 404 Mobile',
-        'name' => 'ltco_banners__404__mobile',
-        'type' => 'image',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '50',
-          'class' => '',
-          'id' => '',
-        ),
-        'return_format' => 'url',
-        'preview_size' => 'medium',
-        'library' => 'all',
-        'min_width' => '',
-        'min_height' => '',
-        'min_size' => '',
-        'max_width' => '',
-        'max_height' => '',
-        'max_size' => '',
-        'mime_types' => '',
-      ),
-    ),
-    'location' => array(
-      array(
-        array(
-          'param' => 'options_page',
-          'operator' => '==',
-          'value' => 'acf-options-imagens-do-cabecalho',
-        ),
-      ),
-    ),
-    'menu_order' => 0,
-    'position' => 'normal',
-    'style' => 'default',
-    'label_placement' => 'top',
-    'instruction_placement' => 'label',
-    'hide_on_screen' => '',
-    'active' => true,
-    'description' => '',
-  ));
 
   acf_add_local_field_group(array(
     'key' => 'group_5d82765583802',
@@ -430,7 +358,7 @@ if ( function_exists('acf_add_local_field_group') ) {
                 'placeholder' => '',
                 'maxlength' => '',
                 'rows' => '',
-                'new_lines' => '',
+                'new_lines' => 'br',
               ),
               array(
                 'key' => 'field_5d9519f8dbdea',
@@ -478,7 +406,7 @@ if ( function_exists('acf_add_local_field_group') ) {
                     'key' => 'field_5d951b3bdbdeb',
                     'label' => 'URL',
                     'name' => 'ltco_carousel__content__button__url',
-                    'type' => 'url',
+                    'type' => 'text',
                     'instructions' => 'Caso seja link redirecionando a outra página do próprio site, use "%url_site%" antes no link. Ex: %url_site%/pagina-exemplo',
                     'required' => 0,
                     'conditional_logic' => 0,
@@ -509,40 +437,6 @@ if ( function_exists('acf_add_local_field_group') ) {
                     'append' => '',
                     'maxlength' => '',
                   ),
-                  array(
-                    'key' => 'field_5d9598f8aadb5',
-                    'label' => 'Estilo',
-                    'name' => 'ltco_carousel__content__button__style',
-                    'type' => 'select',
-                    'instructions' => '',
-                    'required' => 0,
-                    'conditional_logic' => 0,
-                    'wrapper' => array(
-                      'width' => '',
-                      'class' => '',
-                      'id' => '',
-                    ),
-                    'choices' => array(
-                      'primary' => 'Primary',
-                      'secondary' => 'Secondary',
-                      'success' => 'Success',
-                      'danger' => 'Danger',
-                      'warning' => 'Warning',
-                      'info' => 'Info',
-                      'light' => 'Light',
-                      'dark' => 'Dark',
-                      'white' => 'White',
-                    ),
-                    'default_value' => array(
-                      0 => 'primary',
-                    ),
-                    'allow_null' => 0,
-                    'multiple' => 0,
-                    'ui' => 0,
-                    'return_format' => 'value',
-                    'ajax' => 0,
-                    'placeholder' => '',
-                  ),
                 ),
               ),
             ),
@@ -553,9 +447,9 @@ if ( function_exists('acf_add_local_field_group') ) {
     'location' => array(
       array(
         array(
-          'param' => 'page',
+          'param' => 'options_page',
           'operator' => '==',
-          'value' => 35,
+          'value' => 'acf-options-carousel',
         ),
       ),
     ),

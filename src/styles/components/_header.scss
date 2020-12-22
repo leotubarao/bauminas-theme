@@ -45,6 +45,17 @@
     height: 280px;
   }
 
+  .page &:before {
+    background-color: ltco_color('grayblue');
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    mix-blend-mode: multiply;
+  }
+
   .ltco_body_term_orange & {
     background-color: ltco_color('orange');
   }

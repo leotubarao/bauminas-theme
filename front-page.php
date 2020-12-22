@@ -4,7 +4,7 @@
   <div class="ltco_home__wrapper_list">
     <div>
       <?php $units = get_page_by_path('unidades'); ?>
-      <div class="ltco_home__wrapper_list__image" <?= ltco_thumbnail_post('ref'); ?>></div>
+      <div class="ltco_home__wrapper_list__image" <?= ltco_thumbnail_post($units->ID); ?>></div>
 
       <div class="ltco_home__wrapper_list__content">
         <h3 class="h2"><?= ltco_translate($translate['unidades']['title']); ?></h3>
@@ -15,12 +15,11 @@
       </div>
     </div>
     <div>
-      <?php $units = get_page_by_path('unidades'); ?>
       <div
         class="ltco_home__wrapper_list__image video"
         data-modal-video
         data-video-id="<?= get_field('ltco_video_id', 'options');?>"
-        <?= ltco_thumbnail_post('ref'); ?>
+        <?= ltco_thumbnail_post(['acf', 'ltco_video_image', 'options']); ?>
       ></div>
 
       <div class="ltco_home__wrapper_list__content">

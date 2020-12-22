@@ -1,24 +1,32 @@
 <?php
 function ltco_get_image_ref() {
-  // return 'https://images.unsplash.com/photo-1572448910681-3341d74893d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2029&q=80';
-  // return 'https://picsum.photos/id/119/3900/';
-  return 'https://picsum.photos/id/1015/3900/';
+  return 'https://via.placeholder.com/1500/DBDBDB/000000?text=No+Image';
+}
+
+function styleInline( $image ) {
+  return " style='background-image: url($image)'";
 }
 
 function ltco_thumbnail_image( $id = null ) {
+  global $post;
+
+  $ancestors = get_ancestors( get_the_ID($post->ID), 'page' );
+  $post_data = get_post( $ancestors[0] );
+  $id = ($id) ?: $post_data->ID;
 
   if ( is_singular('products') ) return;
 
   if ( has_post_thumbnail( $id ) ) return get_the_post_thumbnail_url( $id );
 }
 
-function ltco_thumbnail_post( $param = null ) {
-  function styleInline( $image ) {
-    return " style='background-image: url($image)'";
-  };
+function ltco_thumbnail_post( $params = null ) {
+  if (is_array($params) && $params[0] === 'acf') {
+    $params = array_slice($params, 1);
+    return styleInline( ltco_the_field($params, 'image') );
+  }
 
-  if ($param === 'ref') return styleInline( ltco_get_image_ref() );
+  if ($params === 'ref') return styleInline( ltco_get_image_ref() );
 
-  if ( ltco_thumbnail_image() )
-    return styleInline( ltco_thumbnail_image( $param ) );
+  if ( ltco_thumbnail_image( $params ) )
+    return styleInline( ltco_thumbnail_image( $params ) );
 }

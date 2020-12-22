@@ -36,7 +36,7 @@
     }
 
     .wrapper_button {
-      background-color: ltco_color();
+      background-color: ltco_color('gray-900');
       max-height: 70px;
       height: 100%;
     }
@@ -48,7 +48,7 @@
       }
     }
 
-    $companyColors: 'green', 'brown', 'orange';
+    $companyColors: 'blue', 'green', 'brown', 'orange';
 
     @each $cc in $companyColors {
       &.#{$cc} .wrapper_button {

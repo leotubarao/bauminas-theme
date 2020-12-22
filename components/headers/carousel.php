@@ -4,9 +4,11 @@
   }
 
   $name_field_carousel = 'ltco_carousel';
-  $counter_carousel_item = count( get_field( $name_field_carousel ) );
+  $field_params = array( $name_field_carousel, 'option' );
+  $get_carousel_item = get_field( ...$field_params );
+  $counter_carousel_item = (is_array($get_carousel_item) ? count( $get_carousel_item ) : 0);
 
-  if ( have_rows( $name_field_carousel ) ) :
+  if ( have_rows( ...$field_params ) ) :
 ?>
 
 <header class="header ltco_carousel">
@@ -15,7 +17,7 @@
 
       <?php
       $counter_loop_item = 0;
-      while ( have_rows( $name_field_carousel ) ) : the_row();
+      while ( have_rows( ...$field_params ) ) : the_row();
 
       $image_featured = get_sub_field( $name_field_carousel.'__image_featured' );
       $image_mobile = get_sub_field( $name_field_carousel.'__image_mobile' );
@@ -41,12 +43,12 @@
 
       <div class="carousel-caption">
         <p class="h1">
-          <?php ltco_the_field([$name_field_carousel.'__content__title'], 'sub'); ?>
+          <?= get_sub_field( $name_field_carousel.'__content__title' ); ?>
         </p>
 
         <?php if ( get_sub_field( $name_field_carousel.'__content__description' ) ) : ?>
         <p class="content">
-          <?php ltco_the_field([$name_field_carousel.'__content__description'], 'sub'); ?>
+          <?= get_sub_field( $name_field_carousel.'__content__description' ); ?>
         </p>
         <?php endif; ?>
 

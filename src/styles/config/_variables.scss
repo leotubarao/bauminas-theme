@@ -263,7 +263,7 @@ $emphasized-link-hover-darken-percentage: 10% !default;
 //
 // Style p element.
 
-$paragraph-margin-bottom:   2rem !default;
+$paragraph-margin-bottom:   $spacer !default;
 
 
 // Grid breakpoints
@@ -276,8 +276,8 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
+  xl: 1200px
+  // xxl: 1400px
 ) !default;
 
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
@@ -292,8 +292,8 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1140px,
-  xxl: 1340px
+  xl: 1140px
+  // xxl: 1340px
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -362,6 +362,7 @@ $font-family-monospace:			SFMono-Regular, Menlo, Monaco, Consolas, "Liberation M
 $font-family-base:				$font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
+$font-calc:                   16 !default;
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
 $font-size-lg:                $font-size-base * 1.25 !default;
 $font-size-sm:                $font-size-base * .875 !default;
@@ -375,12 +376,13 @@ $font-weight-bolder:          bolder !default;
 $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.5 !default;
 
-$h1-font-size:                $font-size-base * 2.1875 !default; // 35
-$h2-font-size:                $font-size-base * 1.875 !default; // 30
-$h3-font-size:                $font-size-base * 1.5625 !default; // 25
-$h4-font-size:                $font-size-base * 1.25 !default; // 20
-$h5-font-size:                $font-size-base * 1.125 !default; // 18
-$h6-font-size:                $font-size-base !default; // 16
+
+$h1-font-size:                30 / $font-calc * $font-size-base !default;
+$h2-font-size:                24 / $font-calc * $font-size-base !default;
+$h3-font-size:                22 / $font-calc * $font-size-base !default;
+$h4-font-size:                20 / $font-calc * $font-size-base !default;
+$h5-font-size:                18 / $font-calc * $font-size-base !default;
+$h6-font-size:                $font-size-base !default;
 
 $headings-margin-bottom:      $spacer !default;
 $headings-font-family:        null !default;

@@ -53,26 +53,26 @@
 
     <?php if (is_page( 136 )) : ?>
 
-    <div class="custom-control custom-checkbox">
+    <?php
+      $terms = get_terms( 'segment-products' );
+
+      if ( !empty( $terms ) && !is_wp_error( $terms ) ) : foreach ( $terms as $term ) :
+        $termSlug = $term->slug;
+        $termName = $term->name;
+    ?>
+    <div class="custom-control custom-checkbox <?= ($termSlug === 'industrial') ? 'orange' : ''; ?>">
       <input
         class="custom-control-input"
         type="checkbox"
-        name="sanitation"
-        id="sanitation"
-        <?= choiceOption( ['on', 'sanitation', 'checked'] ); ?>
+        name="segment-products"
+        value="<?= $termSlug; ?>"
+        id="<?= $termSlug; ?>"
+        <?= choiceOption( [$termSlug, 'segment-products', 'checked'] ); ?>
       >
-      <label class="custom-control-label" for="sanitation">Saneamento</label>
+      <label class="custom-control-label" for="<?= $termSlug; ?>"><?= $termName; ?></label>
     </div>
-    <div class="custom-control custom-checkbox orange">
-      <input
-        class="custom-control-input"
-        type="checkbox"
-        name="industrial"
-        id="industrial"
-        <?= choiceOption( ['on', 'industrial', 'checked'] ); ?>
-      >
-      <label class="custom-control-label" for="industrial">Industrial</label>
-    </div>
+
+    <?php endforeach; endif; ?>
 
     <?php endif; ?>
 

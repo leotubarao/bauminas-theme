@@ -13,5 +13,5 @@
 
 </section>
 <?php endwhile; ?>
-<?php get_template_part( 'components/cta-units' ); ?>
+<?php if ( !is_page('unidades') ) get_template_part( 'components/cta-units' ); ?>
 <?php get_footer(); ?>

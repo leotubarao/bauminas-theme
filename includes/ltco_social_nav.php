@@ -6,29 +6,29 @@ function ltco_social_nav( $params = null ) {
       'name' => 'Facebook',
       'class' => 'facebook',
       'icon_name' => 'facebook',
-      // 'url' => esc_url( get_field( 'ltco_social_facebook', 'options' ), 'https', '#' )
-      'url' => 'javascript:void(0)'
+      'url' => esc_url( get_field( 'ltco_social_facebook', 'options' ), 'https', '#' )
+      // 'url' => 'javascript:void(0)'
     ),
     array(
       'name' => 'Instagram',
       'class' => 'instagram',
       'icon_name' => 'instagram',
-      // 'url' => esc_url( get_field( 'ltco_social_instagram', 'options' ), 'https', '#' )
-      'url' => 'javascript:void(0)'
+      'url' => esc_url( get_field( 'ltco_social_instagram', 'options' ), 'https', '#' )
+      // 'url' => 'javascript:void(0)'
     ),
     array(
       'name' => 'YouTube',
       'class' => 'youtube',
       'icon_name' => 'youtube',
-      // 'url' => esc_url( get_field( 'ltco_social_youtube', 'options' ), 'https', '#' )
-      'url' => 'javascript:void(0)'
+      'url' => esc_url( get_field( 'ltco_social_youtube', 'options' ), 'https', '#' )
+      // 'url' => 'javascript:void(0)'
     ),
     array(
       'name' => 'LinkedIn',
       'class' => 'linkedin',
       'icon_name' => 'linkedin',
-      // 'url' => esc_url( get_field( 'ltco_social_linkedin', 'options' ), 'https', '#' )
-      'url' => 'javascript:void(0)'
+      'url' => esc_url( get_field( 'ltco_social_linkedin', 'options' ), 'https', '#' )
+      // 'url' => 'javascript:void(0)'
     )
   );
 

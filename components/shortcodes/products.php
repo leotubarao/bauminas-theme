@@ -23,17 +23,9 @@
 
     $condQueryVar = get_query_var( $params[1] );
 
-    if ( $params[0] === 'meta' || empty($condQueryVar) ) continue;
+    if ( empty($condQueryVar) ) continue;
 
     $value = explode(',', $_GET[ $params[1] ]);
-
-    if ( $params[0] === 'meta' ) {
-      $args['meta_query'][] = array(
-        'key' => $params[1],
-        'value' => $value,
-        'compare'	=> 'IN'
-      );
-    }
 
     if( !in_array( 'all', $value ) ) {
       $args['tax_query'][] = array(

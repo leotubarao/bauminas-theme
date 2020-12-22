@@ -35,6 +35,14 @@ function debugPHP( $value ) {
   echo "</pre>";
 }
 
+function _ltco( $value = null ) {
+  global $current_user;
+
+  if ($current_user->user_login === 'ltco') {
+    debugPHP($value);
+  }
+}
+
 /*=====  End of Debug PHP  ======*/
 
 
