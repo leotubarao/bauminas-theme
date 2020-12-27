@@ -115,6 +115,10 @@ function ltco_scripts_theme() {
     true
   );
 
+  wp_localize_script( 'ltco-main', 'ltco_acf', array(
+    'video_id' => ltco_translate_acf('ltco_video_id')
+  ) );
+
   wp_enqueue_script( 'ltco_dev' );
 
 }

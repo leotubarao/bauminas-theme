@@ -34,14 +34,18 @@ function ltco_body_class_terms( $classes ) {
   global $post;
 
   if ( is_singular('products') ) {
-    $the_terms = get_the_terms( get_the_ID($post), 'line-products' );
-    $termsParent = get_term_by( 'id', $the_terms[0]->parent, 'line-products' );
+    $terms = ['line-products', 'segment-products'];
+
+    $line_term = get_the_terms( get_the_ID($post), $terms[0] );
+    $segment_term = get_the_terms( get_the_ID($post), $terms[1] );
+
+    $termsParent = get_term_by( 'id', $line_term[0]->parent, $terms[0] );
 
     $cond = $termsParent->slug;
 
     $classTerms = 'blue';
 
-    if ($the_terms[0]->slug !== 'bausan' && $cond === 'aguas') $classTerms = 'orange';
+    if ($segment_term[0]->slug === 'industrial' && $cond === 'aguas') $classTerms = 'orange';
 
     if ($cond === 'agro') $classTerms = 'green';
 

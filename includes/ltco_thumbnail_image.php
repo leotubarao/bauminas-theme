@@ -8,11 +8,22 @@ function styleInline( $image ) {
 }
 
 function ltco_thumbnail_image( $id = null ) {
-  global $post;
+  /* global $post;
+
+  $conditions_pages = [43,76,83,88];
 
   $ancestors = get_ancestors( get_the_ID($post->ID), 'page' );
   $post_data = get_post( $ancestors[0] );
-  $id = ( $id || in_array(43, $ancestors) ) ? $id : $post_data->ID;
+
+  foreach ($conditions_pages as $page_parent) {
+    if ( in_array($page_parent, $ancestors) ) {
+      continue;
+    } else {
+      $id = ( $id ) ?: $post_data->ID;
+    }
+  } */
+
+  if ( is_search() ) return get_field( 'field_ltco_banners__search', 'options' );
 
   if ( is_singular('products') ) return;
 
@@ -24,6 +35,8 @@ function ltco_thumbnail_post( $params = null ) {
     $params = array_slice($params, 1);
     return styleInline( ltco_the_field($params, 'image') );
   }
+
+  if ($params === 'unidades') return styleInline( 'http://srv114.teste.website/~bauminas/wp-content/uploads/2020/12/10057A_Banner_Unidades_Home.jpg' );
 
   if ($params === 'ref') return styleInline( ltco_get_image_ref() );
 

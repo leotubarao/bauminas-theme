@@ -1,8 +1,10 @@
 <?php
 function ltco_title() {
-  $titleSearch = esc_html(get_search_query());
+  $titleSearch = ltco_translate(['Resultados da pesquisa: ', ['en'=>'Search results: ', 'es'=>'Resultados de la búsqueda: ']]);
 
-  if ( is_search() ) return "Resultados da pesquisa: $titleSearch";
+  $titleSearch .= esc_html(get_search_query());
+
+  if ( is_search() ) return $titleSearch;
 
   return get_the_title();
 }

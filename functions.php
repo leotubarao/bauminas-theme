@@ -1,5 +1,7 @@
 <?php
 
+require_once('includes/index.php');
+
 function ltco_path($dirname) {
   $root = '/public';
 
@@ -181,46 +183,3 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 remove_action('admin_print_styles', 'print_emoji_styles');
 
 /*=====  End of Remove WordPress  ======*/
-
-/*=======================================
-=            Includes Theme            =
-=======================================*/
-
-/*----------  Menu Style Bootstrap  ----------*/
-
-require_once('includes/wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php');
-
-
-require_once('includes/ltco_get_head.php');
-
-require_once('includes/ltco_product_category.php');
-
-require_once('includes/ltco_body_class.php');
-
-require_once('includes/ltco_acf_options.php');
-
-require_once('includes/ltco_formarter_phone.php');
-
-require_once('includes/ltco_translate.php');
-
-require_once('includes/ltco_social_nav.php');
-
-require_once('includes/ltco_thumbnail_image.php');
-
-require_once('includes/ltco_title.php');
-
-require_once('includes/ltco_post_navigation.php');
-
-require_once('includes/ltco_custom_post_type.php');
-
-require_once('includes/ltco_custom_taxonomy.php');
-
-require_once('includes/ltco_query_vars.php');
-
-require_once('includes/ltco_post_class.php');
-
-require_once('includes/ltco_scripts_theme.php');
-
-require_once('includes/ltco_customize_theme.php');
-
-/*=====  End of Includes Theme  ======*/

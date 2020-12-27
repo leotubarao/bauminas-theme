@@ -5,6 +5,7 @@
 
     img {
       width: auto;
+      max-width: 420px !important;
       @extend .img-fluid;
     }
 

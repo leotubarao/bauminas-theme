@@ -4,13 +4,9 @@
   background-size: cover;
   height: 280px;
 
-  @include media-breakpoint-up(lg) {
-    height: 330px;
-  }
-
-  @include media-breakpoint-up(xxl) {
+  /* @include media-breakpoint-up(xxl) {
     height: 480px;
-  }
+  } */
 }
 
 .carousel-control-prev-icon,

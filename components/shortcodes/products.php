@@ -1,4 +1,4 @@
-<?php get_template_part( 'components/filter-products' ); ?>
+<?php if (is_page( 136 )) get_template_part( 'components/filter-products' ); ?>
 <?php
   $taxonomyName = 'line-products';
   $current_term = get_term_by( 'slug', ltco_parent_page(), $taxonomyName );

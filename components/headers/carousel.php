@@ -21,7 +21,6 @@
 
       $image_featured = get_sub_field( $name_field_carousel.'__image_featured' );
       $image_mobile = get_sub_field( $name_field_carousel.'__image_mobile' );
-      $content_carousel = get_sub_field( $name_field_carousel.'__content' );
     ?>
 
       <div class="carousel-item ltco_carousel__item <?= current_carousel($counter_loop_item); ?>" style="background-image:
@@ -43,12 +42,12 @@
 
       <div class="carousel-caption">
         <p class="h1">
-          <?= get_sub_field( $name_field_carousel.'__content__title' ); ?>
+          <?= get_sub_field( ltco_language( $name_field_carousel.'__content__title' ) ); ?>
         </p>
 
-        <?php if ( get_sub_field( $name_field_carousel.'__content__description' ) ) : ?>
+        <?php if ( get_sub_field( ltco_language( $name_field_carousel.'__content__description' ) ) ) : ?>
         <p class="content">
-          <?= get_sub_field( $name_field_carousel.'__content__description' ); ?>
+          <?= get_sub_field( ltco_language( $name_field_carousel.'__content__description' ) ); ?>
         </p>
         <?php endif; ?>
 

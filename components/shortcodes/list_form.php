@@ -17,14 +17,6 @@
   </a>
   <a
     data-toggle="collapse"
-    data-target=".invest_form"
-    class="ltco_switch_form__button"
-    aria-expanded="false"
-  >
-    Relações com investimento
-  </a>
-  <a
-    data-toggle="collapse"
     data-target=".denuncia_form"
     class="ltco_switch_form__button"
     aria-expanded="false"

@@ -9,14 +9,6 @@
     background-size: cover;
     height: 200px;
 
-    @include media-breakpoint-up(lg) {
-      height: 300px;
-    }
-
-    @include media-breakpoint-up(xxl) {
-      height: 400px;
-    }
-
     .ltco_banner_mobile {
       background-repeat: no-repeat;
       background-position: center center;
@@ -43,21 +35,18 @@
     }
   }
 
-  .blog &,
-  .single &,
-  .archive & {
-    height: 280px;
-  }
-
-  .page &.ltco_has_thumb:before {
-    background-color: ltco_color('grayblue');
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    mix-blend-mode: multiply;
+  .page &,
+  .search & {
+    &.ltco_has_thumb:before {
+      background-color: ltco_color('grayblue');
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      mix-blend-mode: multiply;
+    }
   }
 
   .ltco_body_term_orange & {

@@ -25,7 +25,7 @@
     },
     "ltco_scripts_plugins": {
       "srcPath": [
-        "node_modules/modal-video/js/modal-video.min.js"
+        "node_modules/modal-video/js/jquery-modal-video.min.js"
       ],
       "destPath": "public/scripts"
     },

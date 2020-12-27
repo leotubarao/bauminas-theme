@@ -62,7 +62,7 @@
           );
           wp_nav_menu(
             array(
-              'theme_location'  => 'header-visible-nav',
+              'theme_location'  => 'header-hidden-nav',
               'depth'           => 2,
               'container'       => '',
               'menu_class'      => 'navbar-nav d-none d-md-flex ltco_navbar_header__collapse__navbar',

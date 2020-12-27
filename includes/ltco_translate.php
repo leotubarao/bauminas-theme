@@ -7,7 +7,8 @@ function ltco_current_lang( $lang = 'br' ) {
   return;
 }
 
-function ltco_translate( $default, $language = null ) {
+function ltco_translate( $default ) {
+  $language = false;
   if ( is_array( $default ) ) list($default, $language) = $default;
 
   if ( empty( $language ) || !class_exists( 'WPGlobus' ) ) return $default;
@@ -19,6 +20,61 @@ function ltco_translate( $default, $language = null ) {
   return $language[$langPlugin];
 }
 
+function ltco_translate_acf( $field ) {
+  $id = false;
+  if ( is_array( $field ) ) list($field, $id) = $field;
+
+  $id = ( $id ) ?: 'options';
+
+  if ( class_exists( 'WPGlobus' ) ) {
+    $langPlugin = WPGlobus::Config()->language;
+
+    $get_field = get_field( $field.'_'.$langPlugin, $id );
+
+    if ( !empty( $get_field ) ) return $get_field;
+  }
+
+  return get_field( $field, $id );
+}
+
+/* function ltco_translate_acf( $params, $type = false ) {
+  if ( is_array( $params ) ) list($value, $id) = $params;
+
+  $fieldValue = ( is_array( $params ) ) ? $value : $params;
+
+  $array = [];
+  $typesSubArray = array( 'sub', 'subImage', 'subUrl' );
+  $typesArray = array( 'image', 'url', 'subImage', 'subUrl' );
+
+  if ( class_exists( 'WPGlobus' ) ) {
+    $langPlugin = WPGlobus::Config()->language;
+
+    if ($langPlugin !== 'br') $fieldValue = $fieldValue.'_'.$langPlugin;
+  }
+
+  $get_field = ( is_array( $params ) ) ? [$value, $id] : $value;
+
+  array_push($array, $fieldValue, $id);
+
+  $field = ( $types && in_array($type, $typesSubArray) ) ? get_sub_field( ...$array ) : get_field( ...$array );
+
+  if ( !empty( $field ) ) return
+
+  if ( !empty( $field ) ) {
+    return ( in_array($type, $typesArray) ) ? $field['url'] : $field;
+  }
+} */
+
+function ltco_language ( $value ) {
+  if ( class_exists( 'WPGlobus' ) ) {
+    $langPlugin = WPGlobus::Config()->language;
+
+    if ($langPlugin !== 'br') return $value.'_'.$langPlugin;
+  }
+
+  return $value;
+}
+
 $GLOBALS['ltco_translate'] = [
   'company' => [
     'title' => [
@@ -27,29 +83,14 @@ $GLOBALS['ltco_translate'] = [
         'en' => '<strong>BAUMINAS Group</strong> Companies',
         'es' => 'Empresas del <strong>Grupo BAUMINAS</strong>'
       ]
-    ],
-    'aguas' => [
-      'Águas',
-      [
-        'en' => 'Water'
-      ]
-    ],
-    'agro' => 'Agro',
-    'mineracao' => [
-      'Mineração',
-      [
-        'en' => 'Mining',
-        'es' => 'Minería'
-      ]
-    ],
-    'log' => 'Log',
-    'hidroazul' => 'Hidroazul',
+    ]
   ],
   'cta-units' => [
     'title' => [
       'Unidades',
       [
-        'en' => 'Units'
+        'en' => 'Manufacturing Units',
+        'es' => 'Unidades de Fabricación'
       ]
     ],
     'description' => [
@@ -91,21 +132,9 @@ $GLOBALS['ltco_translate'] = [
     ],
   ],
   'cat_units' => [
-    'aguas' => [
-      'Águas',
-      [
-        'en' => 'Waters',
-        'es' => 'Aguas',
-      ]
-    ],
+    'aguas' => 'Águas',
     'agro' => 'Agro',
-    'mineracao' => [
-      'Mineração',
-      [
-        'en' => 'Mining',
-        'es' => 'Minería'
-      ]
-    ],
+    'mineracao' => 'Mineração',
     'log' => 'Log',
     'hidroazul' => 'Hidroazul',
     'administrativos' => [
@@ -254,6 +283,116 @@ $GLOBALS['ltco_translate'] = [
           'es' => 'Ver más'
         ]
       ],
+    ],
+  ],
+  'our-numbers' => [
+    [
+      'title' => [
+        '60'
+      ],
+      'description' => [
+        'anos de história, experiência e conhecimento técnico',
+        [
+          'en' => 'years of history, experience and technical knowledge',
+          'es' => 'años de Historia, experiencia y conocimientos técnicos'
+        ]
+      ]
+    ],
+    [
+      'title' => [
+        '+1000'
+      ],
+      'description' => [
+        'Colaboradores Diretos',
+        [
+          'en' => 'Direct Employees',
+          'es' => 'Colaboradores directos'
+        ]
+      ]
+    ],
+    [
+      'title' => [
+        '18'
+      ],
+      'description' => [
+        'Unidades Fabris estrategicamente localizadas',
+        [
+          'en' => 'Manufacturing Units strategically located',
+          'es' => 'Plantas de fabricación situadas estratégicamente'
+        ]
+      ]
+    ],
+    [
+      'title' => [
+        '4'
+      ],
+      'description' => [
+        'Unidades de mineração',
+        [
+          'en' => 'Mining units',
+          'es' => 'Plantas mineras'
+        ]
+      ]
+    ],
+    [
+      'title' => [
+        '3'
+      ],
+      'description' => [
+        'Escritórios administrativos',
+        [
+          'en' => 'Administrative offices',
+          'es' => 'Oficinas administrativas'
+        ]
+      ]
+    ],
+    [
+      'title' => [
+        '+3500'
+      ],
+      'description' => [
+        'Municípios atendidos',
+        [
+          'en' => 'Municipalities served',
+          'es' => 'Municipios atendidos'
+        ]
+      ]
+    ],
+    [
+      'title' => [
+        '+2000'
+      ],
+      'description' => [
+        'Municípios atendidos',
+        [
+          'en' => 'Active Customers',
+          'es' => 'Clientes activos'
+        ]
+      ]
+    ],
+    [
+      'title' => [
+        'TOP 15'
+      ],
+      'description' => [
+        'Maiores empresas de saneamento do pais são atendidas pelo grupo',
+        [
+          'en' => 'The TOP 15 Largest sanitation companies in the country are served by the group',
+          'es' => 'El grupo atiende a las 15 mayores empresas de saneamiento del país'
+        ]
+      ]
+    ],
+    [
+      'title' => [
+        '+130'
+      ],
+      'description' => [
+        'Milhões de pessoas beneficiadas com água tratada com produtos fabricados pelo grupo',
+        [
+          'en' => 'Million people benefited from water treated with products manufactured by the group',
+          'es' => 'Millones de personas beneficiadas con el agua tratada con productos fabricados por el grupo'
+        ]
+      ]
     ],
   ]
 ];

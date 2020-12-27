@@ -11,10 +11,17 @@ add_action( 'admin_menu', 'ltco_acf_show_admin', 100 );
 /*----------  Render Custom Field  ----------*/
 
 function ltco_the_field( $params, $type = false ) {
+  if ( is_array( $params ) ) list($value, $id) = $params;
+
+  $value = ( is_array( $params ) ) ? $value : $params;
+
+  $array = [];
   $typesSubArray = array( 'sub', 'subImage', 'subUrl' );
   $typesArray = array( 'image', 'url', 'subImage', 'subUrl' );
 
-  $field = ( in_array($type, $typesSubArray) && !!$types ) ? get_sub_field( ...$params ) : get_field( ...$params );
+  array_push($array, $value, $id);
+
+  $field = ( $type && in_array($type, $typesSubArray) ) ? get_sub_field( ...$array ) : get_field( ...$array );
 
   if ( !empty( $field ) ) {
     return ( in_array($type, $typesArray) ) ? $field['url'] : $field;
@@ -28,15 +35,17 @@ function ltco_carousel_button_link( $field ) {
 		$fields_button = get_sub_field( $field.'__content__button' );
 
 		$button_url = $fields_button[$field.'__content__button__url'];
+		$button_desc = ltco_language($field.'__content__button__description');
+		$button_desc = $fields_button[$button_desc];
 
 		$is_native = strstr( $button_url, '%url_site%' );
 
-		$button_url = ( $is_native ) ? str_replace( '%url_site%', get_home_url(), $button_url ) : $button_url;
+		$button_url = ( $is_native ) ? str_replace( '%url_site%', home_url(), $button_url ) : $button_url;
 
 		$external_link = ( !$is_native ) ? 'target="_blank" rel="external noopener noreferrer"' : '';
 
-		$carousel_button_link .= "<a href='$button_url' class='ltco_destak stretched-link' title='".$fields_button[$field.'__content__button__description']."' $external_link>";
-		$carousel_button_link .= $fields_button[$field.'__content__button__description'];
+		$carousel_button_link = "<a href='$button_url' class='ltco_destak stretched-link' title='$button_desc' $external_link>";
+		$carousel_button_link .= $button_desc;
 		$carousel_button_link .= '</a>';
 
 		return $carousel_button_link;
@@ -49,7 +58,7 @@ function ltco_carousel_image_link( $field ) {
 
 		$is_native = strstr( $image_url, '%url_site%' );
 
-		$image_url = ( $is_native ) ? str_replace( '%url_site%', get_home_url(), $image_url ) : $image_url;
+		$image_url = ( $is_native ) ? str_replace( '%url_site%', home_url(), $image_url ) : $image_url;
 
 		$external_link = ( !$is_native ) ? 'target="_blank" rel="external noopener noreferrer"' : '';
 

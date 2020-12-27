@@ -4,17 +4,17 @@
       <?php get_search_form(); ?>
 		</div>
     <div class="ltco_navbar_top__languages">
-      <span><?= ltco_translate( 'Idiomas', ['en' => 'Languages'] ); ?></span>
+      <span><?= ltco_translate( ['Idiomas', ['en' => 'Languages']] ); ?></span>
       <a href="<?= site_url(); ?>" class="ltco_icons__languages_br" <?= ltco_current_lang(); ?>>
-        <span class="sr-only"><?= ltco_translate( 'Português', ['en' => 'Portuguese', 'es' => 'Portugués'] ); ?></span>
+        <span class="sr-only"><?= ltco_translate( ['Português', ['en' => 'Portuguese', 'es' => 'Portugués']] ); ?></span>
         <img src="<?= ltco_path('svgs'); ?>/icon-languages-br.svg" alt="ltco_icon_language_br">
       </a>
       <a href="<?= site_url( 'en' ); ?>" class="ltco_icons__languages_us" <?= ltco_current_lang('en'); ?>>
-        <span class="sr-only"><?= ltco_translate( 'Inglês', ['en' => 'English', 'es' => 'Inglés'] ); ?></span>
+        <span class="sr-only"><?= ltco_translate( ['Inglês', ['en' => 'English', 'es' => 'Inglés']] ); ?></span>
         <img src="<?= ltco_path('svgs'); ?>/icon-languages-en.svg" alt="ltco_icon_language_us">
       </a>
       <a href="<?= site_url( 'es' ); ?>" class="ltco_icons__languages_es" <?= ltco_current_lang('es'); ?>>
-        <span class="sr-only"><?= ltco_translate( 'Espanhol', ['en' => 'Spanish', 'es' => 'Español'] ); ?></span>
+        <span class="sr-only"><?= ltco_translate( ['Espanhol', ['en' => 'Spanish', 'es' => 'Español']] ); ?></span>
         <img src="<?= ltco_path('svgs'); ?>/icon-languages-es.svg" alt="ltco_icon_language_es">
       </a>
     </div>

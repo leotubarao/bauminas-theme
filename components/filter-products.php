@@ -1,10 +1,4 @@
 <?php
-  function choiceOption($params) {
-    list($term, $query, $callback) = $params;
-
-    return ( in_array( $term, explode( ',', $_GET[ $query ] ) ) ) ? $callback : '';
-  }
-
   $selects = [
     [
       'tax-name' => 'line-products',
@@ -34,7 +28,7 @@
       if ( !empty( $terms ) && !is_wp_error( $terms ) ) :
     ?>
     <select data-filter="<?= $select['tax-name']; ?>" name="<?= $select['tax-name']; ?>" class="custom-select">
-      <option value="all" selected><?= ltco_translate(...$select['label']); ?></option>
+      <option value="all" selected><?= ltco_translate($select['label']); ?></option>
       <?php
         foreach ( $terms as $term ) :
           $termSlug = $term->slug;
@@ -51,9 +45,8 @@
       endforeach;
     ?>
 
-    <?php if (is_page( 136 )) : ?>
-
     <?php
+      if (is_page( 136 )) :
       $terms = get_terms( 'segment-products' );
 
       if ( !empty( $terms ) && !is_wp_error( $terms ) ) : foreach ( $terms as $term ) :
@@ -72,10 +65,8 @@
       <label class="custom-control-label" for="<?= $termSlug; ?>"><?= $termName; ?></label>
     </div>
 
-    <?php endforeach; endif; ?>
+    <?php endforeach; endif; endif; ?>
 
-    <?php endif; ?>
-
-    <button type="submit" class="btn btn-primary"><?= ltco_translate('Filtrar', ['en'=>'Filter']); ?></button>
+    <button type="submit" class="btn btn-primary"><?= ltco_translate(['Filtrar', ['en'=>'Filter']]); ?></button>
   </div>
 </form>

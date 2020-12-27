@@ -3,6 +3,12 @@
   color: ltco_color('white');
 }
 
+$ltco_size: 13px;
+
+body {
+  @include font-size($ltco_size);
+}
+
 #root {
   position: relative;
 }

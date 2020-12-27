@@ -29,6 +29,7 @@
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     position: relative;
+    @include font-size($ltco_size);
 
     &:hover {
       background-color: darken(ltco_color('gray-100'), 2.5%);

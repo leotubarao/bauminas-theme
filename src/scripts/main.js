@@ -1,12 +1,11 @@
 $(document).ready(function () {
   bsCustomFileInput.init();
 
-  $('.ltco_forms [class=*"container"]').collapse({
-    toggle: false
-  });
-
+  $('[href="#video-institucional"]')
+    .attr('data-video-id', ltco_acf.video_id)
+    .modalVideo();
 });
 
 {
-	new ModalVideo('[data-modal-video]');
+	$('[data-modal-video]').modalVideo();
 }

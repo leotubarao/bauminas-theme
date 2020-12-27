@@ -5,6 +5,12 @@ $GLOBALS['ltco_query'] = [
   ['tax','segment-products']
 ];
 
+function choiceOption($params) {
+  list($term, $query, $callback) = $params;
+
+  return ( in_array( $term, explode( ',', $_GET[ $query ] ) ) ) ? $callback : '';
+}
+
 function ltco_search_scripts() {
   wp_enqueue_script( 'ltco_filter_units', ltco_path('scripts').'/ltco_filter_units.js', array( 'jquery' ), '1.0.0', true );
 
