@@ -46,7 +46,7 @@
       <div class="ltco_home__triade__wrapper__item">
         <h3 class="h2"><?= ltco_translate($translate['cv']['title']); ?></h3>
         <p><?= ltco_translate($translate['cv']['description']); ?></p>
-        <a href="<?= home_url('contato'); ?>" class="ltco_destak">
+        <a href="<?= home_url('cv'); ?>" class="ltco_destak">
           <?= ltco_translate($translate['cv']['button']); ?>
         </a>
       </div>

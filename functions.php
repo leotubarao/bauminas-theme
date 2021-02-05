@@ -14,11 +14,11 @@ function ltco_path($dirname) {
 
 function ltco_mailer( $phpmailer ) {
   $phpmailer->isSMTP();
-  $phpmailer->Host = 'smtp.sendgrid.net';
+  $phpmailer->Host = 'smtp.example.com';
   $phpmailer->SMTPAuth = true;
   $phpmailer->Port = 465;
-  $phpmailer->Username = 'apikey';
-  $phpmailer->Password = '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';
+  $phpmailer->Username = 'user@example.com';
+  $phpmailer->Password = 'secret';
 }
 
 // add_action( 'phpmailer_init', 'ltco_mailer' );

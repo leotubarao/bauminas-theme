@@ -36,7 +36,7 @@ function ltco_thumbnail_post( $params = null ) {
     return styleInline( ltco_the_field($params, 'image') );
   }
 
-  if ($params === 'unidades') return styleInline( 'http://srv114.teste.website/~bauminas/wp-content/uploads/2020/12/10057A_Banner_Unidades_Home.jpg' );
+  if ($params === 'unidades') return styleInline( wp_upload_dir( '2020/12' )['url'].'/10057A_Banner_Unidades_Home.jpg' );
 
   if ($params === 'ref') return styleInline( ltco_get_image_ref() );
 
