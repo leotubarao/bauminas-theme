@@ -37,33 +37,13 @@ function ltco_translate_acf( $field ) {
   return get_field( $field, $id );
 }
 
-/* function ltco_translate_acf( $params, $type = false ) {
-  if ( is_array( $params ) ) list($value, $id) = $params;
+function ltco_title_units($value) {
+  $translate = $GLOBALS['ltco_translate']['units'];
 
-  $fieldValue = ( is_array( $params ) ) ? $value : $params;
+  if ($value) return ltco_translate($translate[$value]);
 
-  $array = [];
-  $typesSubArray = array( 'sub', 'subImage', 'subUrl' );
-  $typesArray = array( 'image', 'url', 'subImage', 'subUrl' );
-
-  if ( class_exists( 'WPGlobus' ) ) {
-    $langPlugin = WPGlobus::Config()->language;
-
-    if ($langPlugin !== 'br') $fieldValue = $fieldValue.'_'.$langPlugin;
-  }
-
-  $get_field = ( is_array( $params ) ) ? [$value, $id] : $value;
-
-  array_push($array, $fieldValue, $id);
-
-  $field = ( $types && in_array($type, $typesSubArray) ) ? get_sub_field( ...$array ) : get_field( ...$array );
-
-  if ( !empty( $field ) ) return
-
-  if ( !empty( $field ) ) {
-    return ( in_array($type, $typesArray) ) ? $field['url'] : $field;
-  }
-} */
+  return ltco_translate($translate['others']);
+}
 
 function ltco_language ( $value ) {
   if ( class_exists( 'WPGlobus' ) ) {
@@ -82,6 +62,52 @@ $GLOBALS['ltco_translate'] = [
       [
         'en' => '<strong>BAUMINAS Group</strong> Companies',
         'es' => 'Empresas del <strong>Grupo BAUMINAS</strong>'
+      ]
+    ]
+  ],
+  'units' => [
+    'office' => [
+      'Escritórios Corporativos',
+      [
+        'en' => 'Corporate Offices',
+        'es' => 'Oficinas Corporativas'
+      ]
+    ],
+    'leaf' => [
+      'Unidades BAUMINAS Agro',
+      [
+        'en' => 'BAUMINAS Agro Units'
+      ]
+    ],
+    'factory' => [
+      'Unidades BAUMINAS Águas',
+      [
+        'en' => 'BAUMINAS Águas Units'
+      ]
+    ],
+    'pool' => [
+      'Unidades BAUMINAS Hidroazul',
+      [
+        'en' => 'BAUMINAS Hidroazul Units'
+      ]
+    ],
+    'log' => [
+      'Unidades BAUMINAS Log',
+      [
+        'en' => 'BAUMINAS Log Units'
+      ]
+    ],
+    'mining' => [
+      'Unidades BAUMINAS Mineração',
+      [
+        'en' => 'BAUMINAS Mineração Units'
+      ]
+    ],
+    'others' => [
+      'Outras unidades',
+      [
+        'en' => 'Other units',
+        'es' => 'Otras unidades',
       ]
     ]
   ],
