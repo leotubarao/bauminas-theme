@@ -23,7 +23,7 @@
 
   if ( $query->have_posts() ) :
 ?>
-<h2 class="mt-5"><?= ltco_title_units($term->slug); ?></h2>
+<h2 class="mt-5"><?= ltco_title_units($term); ?></h2>
 <section class="ltco_unidades__lists">
   <?php while ( $query->have_posts() ) : $query->the_post(); ?>
   <div class="ltco_unidades__lists__item">

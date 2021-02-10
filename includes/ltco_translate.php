@@ -37,12 +37,21 @@ function ltco_translate_acf( $field ) {
   return get_field( $field, $id );
 }
 
-function ltco_title_units($value) {
-  $translate = $GLOBALS['ltco_translate']['units'];
+function ltco_title_units( $term, $isCat = false ) {
+  $name = $term->name;
+  $slug = $term->slug;
 
-  if ($value) return ltco_translate($translate[$value]);
+  if ( !$isCat ) $units = ['Units', 'Unidades'];
 
-  return ltco_translate($translate['others']);
+  if ( $slug === 'office' ) return $name;
+
+  if ( class_exists( 'WPGlobus' ) ) {
+    $lang = WPGlobus::Config()->language;
+
+    return ( $lang === 'en' ) ? "BAUMINAS $name $units[0]" : "$units[1] BAUMINAS $name";
+  }
+
+  return $name;
 }
 
 function ltco_language ( $value ) {
