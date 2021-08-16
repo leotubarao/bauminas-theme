@@ -1,0 +1,82 @@
+.type-products article {
+  .line_products {
+    @include media-breakpoint-up(md) {
+      > [class*="container"] {
+        gap: 2rem;
+      }
+    }
+
+    figure {
+      background-color: ltco_color('gray-100');
+      padding: 2rem;
+      border-radius: 20px;
+      margin-bottom: 0;
+      display: flex;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        margin: auto;
+      }
+    }
+
+  }
+
+  .ltco_box_light {
+    background-color: ltco_color('gray-100');
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+    @include media-breakpoint-up(md) {
+      padding: 2rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 3rem;
+    }
+  }
+
+  ul {
+    padding-left: 1.35rem;
+
+    ::marker {
+      color: darken(ltco_color('gray-500'), 5%);
+    }
+  }
+
+  .ltco_table {
+    overflow-x: initial;
+    margin-bottom: 0;
+
+    table {
+      @extend .table;
+      @extend .table-borderless;
+      @extend .table-sm;
+
+      border-spacing: 0.3rem;
+      border-collapse: initial;
+      text-align: center;
+
+      td {
+        background-color: ltco_color('gray-300');
+        border-radius: 20px;
+
+        &:first-child {
+          background-color: rgba(ltco_color(), 0.2);
+
+          .ltco_body_term_orange & {
+            background-color: rgba(ltco_color('orange'), 0.2);
+          }
+
+          .ltco_body_term_green & {
+            background-color: rgba(ltco_color('green'), 0.2);
+          }
+
+          .ltco_body_term_brown & {
+            background-color: rgba(ltco_color('brown'), 0.2);
+          }
+        }
+      }
+    }
+  }
+}

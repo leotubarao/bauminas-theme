@@ -1,5 +1,6 @@
 # dependencies
-/node_modudes
+/node_modules
+/public
 
 # misc
 .DS_Store
@@ -8,6 +9,12 @@
 .env.test.local
 .env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+.idea
+.vs
+.vscode
+.cache-loader
+.log
+.map
+.DS_store
+
+alteracoes.md

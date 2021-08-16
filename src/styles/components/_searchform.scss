@@ -1,0 +1,61 @@
+.ltco_form_search {
+  min-width: 200px;
+  flex-grow: 1;
+
+  .form-group {
+    display: grid;
+    margin-bottom: 0;
+  }
+
+  &__field {
+    background-color: rgba(ltco-color('white'), 0.2);
+    padding: .5rem 1.25rem;
+    padding-right: 34px;
+    height: 34px;
+    border-radius: 34px;
+    border: none;
+    color: ltco-color('white');
+    caret-color: ltco-color('white');
+    grid-area: 1/1;
+    @include transition($transition-base);
+
+    &:focus {
+      color: ltco-color('white');
+      background-color: rgba(ltco-color('white'), 0.3);
+      box-shadow: 0 0 0 0.2rem rgba(ltco-color('white'), 0.3);
+    }
+
+    &::placeholder {
+      color: ltco-color('white');
+      font-weight: 300;
+      opacity: 0.5;
+    }
+  }
+
+  &__btn {
+    background-color: transparent;
+    border: none;
+    width: 34px;
+    outline: none;
+    grid-area: 1/1;
+    justify-self: end;
+    display: flex;
+    border-top-right-radius: 34px;
+    border-bottom-right-radius: 34px;
+    @include transition($transition-base);
+
+    img {
+      margin: auto;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: rgba(ltco-color('darkblue'), 0.5);
+      box-shadow: 0 0 0 0.2rem rgba(ltco-color('darkblue'), 0.5);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

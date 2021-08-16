@@ -1,0 +1,51 @@
+.ltco_produtos article {
+  .ltco_products_button > [class*="container"] {
+    display: grid;
+    gap: 2rem;
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    > * {
+      background-color: ltco_color('black');
+      display: flex;
+      padding: 2rem;
+      height: 250px;
+      border-radius: 20px;
+      position: relative;
+
+      $colorButtons: 'blue', 'green', 'brown', 'darkblue';
+
+      @each $cc in $colorButtons {
+        &.#{$cc} {
+          background-color: ltco_color($cc);
+        }
+      }
+    }
+
+    [class*="container"] {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: auto;
+
+      @include media-breakpoint-up(md) {
+        max-width: 200px;
+      }
+
+      * {
+        text-align: center;
+        color: ltco_color('white');
+      }
+
+      a {
+        @extend .stretched-link;
+      }
+    }
+
+    [class*="ltco_destak__"] {
+      margin-bottom: 0;
+    }
+  }
+}

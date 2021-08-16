@@ -1,0 +1,67 @@
+.header:not(.ltco_carousel) {
+
+  &.default {
+    background-color: ltco_color();
+    overflow: hidden;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 200px;
+
+    .ltco_banner_mobile {
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .ltco_title_header {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      &,
+      > * {
+        text-align: center;
+        color: ltco_color('white');
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .single-post &,
+  .blog &,
+  .page &,
+  .search & {
+    &.ltco_has_thumb:before {
+      background-color: ltco_color('grayblue');
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      mix-blend-mode: multiply;
+    }
+  }
+
+  .ltco_body_term_orange & {
+    background-color: ltco_color('orange');
+  }
+
+  .ltco_body_term_green &,
+  .ltco_body_produtos[class*="agro"] & {
+    background-color: ltco_color('green');
+  }
+
+  .ltco_body_term_brown &,
+  .ltco_body_produtos[class*="mineracao"] & {
+    background-color: ltco_color('brown');
+  }
+}

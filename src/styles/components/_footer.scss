@@ -1,0 +1,69 @@
+.ltco_footer {
+  background-color: ltco_color('gray-300');
+
+  %centerAllMaxMD {
+    @include media-breakpoint-only(xs) {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    .row > * + * {
+      margin-top: 3rem;
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    &__social .ltco_social {
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__heading {
+      text-align: center;
+    }
+  }
+
+  &__nav {
+    .nav {
+      margin-top: -0.5rem;
+      margin-bottom: -0.5rem;
+
+      .nav-link {
+        color: ltco_color('gray-900');
+        padding-left: 0;
+        padding-right: 0;
+        @include transition($transition-base);
+
+        &:hover {
+          padding-left: 0.5rem;
+        }
+
+        @include media-breakpoint-only(xs) {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .ltco_scroll_top {
+    margin: 0 auto;
+
+    @include media-breakpoint-up(sm) {
+      margin-right: 0;
+    }
+  }
+
+  &__copyright {
+    background-color: ltco_color('gray-500');
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    .d-flex > * {
+      color: ltco_color('gray-900');
+    }
+  }
+}

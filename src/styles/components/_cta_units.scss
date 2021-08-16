@@ -1,0 +1,32 @@
+$this: ltco_cta_units;
+.ltco_cta_units {
+  display: flex;
+
+  @include media-breakpoint-up(lg) {
+    display: grid;
+    @include make-container-grid-layout(4);
+  }
+
+  @include media-breakpoint-up(xxl) {
+    @include make-container-grid-layout(3);
+  }
+
+  &__container {
+    background-color: ltco_color();
+    display: flex;
+    width: 100%;
+    position: relative;
+
+    @include media-breakpoint-up(lg) {
+      grid-column: 3/-1;
+    }
+  }
+
+  .#{$this}__wrapper {
+    margin: auto;
+
+    @include media-breakpoint-only(xs) {
+      text-align: center;
+    }
+  }
+}

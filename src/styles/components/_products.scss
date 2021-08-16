@@ -1,0 +1,59 @@
+.ltco_products {
+  @extend %triade-grid;
+
+  &__item {
+    border-radius: 20px;
+    overflow: hidden;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    @include transition($transition-base);
+
+    &:hover {
+      box-shadow: 0 14px 35px -12px rgba(ltco_color('gray-700'), 0.5);
+      transform: scale(1.03);
+    }
+
+    > * {
+      display: flex;
+    }
+
+    figure {
+      background-color: ltco_color('gray-100');
+      width: 100%;
+      min-height: 110px;
+      margin-bottom: 0;
+      padding: 1.5rem;
+      flex: 1;
+
+      > img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+      }
+    }
+
+    .wrapper_button {
+      background-color: ltco_color('gray-900');
+      max-height: 70px;
+      height: 100%;
+    }
+
+    figure,
+    .wrapper_button {
+      > * {
+        margin: auto;
+      }
+    }
+
+    $companyColors: 'blue', 'green', 'brown', 'orange';
+
+    @each $cc in $companyColors {
+      &.#{$cc} .wrapper_button {
+        background-color: ltco_color($cc);
+      }
+    }
+  }
+}

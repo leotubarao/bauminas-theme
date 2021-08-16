@@ -1,0 +1,45 @@
+.ltco_pagination_icons {
+  @include media-breakpoint-up(sm) {
+    padding: 0.25rem 0.5rem;
+  }
+
+  &.prev {
+    &:before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      display: block;
+      background-size: 100%;
+      background-image: url('#{$ltco_path_svgs}/icon-arrow-left.svg');
+      @include transition($transition-base);
+    }
+
+    &:hover:before {
+      transform: translateX(-3px);
+    }
+
+    span {
+      margin-left: 0.5rem;
+    }
+  }
+
+  &.next {
+    &:after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      display: block;
+      background-size: 100%;
+      background-image: url('#{$ltco_path_svgs}/icon-arrow-right.svg');
+      @include transition($transition-base);
+    }
+
+    &:hover:after {
+      transform: translateX(3px);
+    }
+
+    span {
+      margin-right: 0.5rem;
+    }
+  }
+}

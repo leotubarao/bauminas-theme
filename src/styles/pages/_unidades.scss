@@ -1,0 +1,103 @@
+.ltco_unidades {
+  &__wrapper_cat {
+    display: flex !important;
+    justify-content: space-between;
+
+    img {
+      width: auto;
+      max-width: 420px !important;
+      @extend .img-fluid;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-top: -2rem;
+      flex-direction: column;
+
+      > * {
+        margin-top: 2rem !important;
+
+        &[class*="content"] {
+          padding: 0 !important;
+        }
+      }
+
+      img {
+        max-width: 300px;
+      }
+    }
+  }
+
+  &__cat {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    > li {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      color: ltco_color('darkblue');
+
+      & + * {
+        margin-top: 1rem;
+      }
+
+      &:before {
+        content: '';
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        margin-right: 0.5rem;
+        background-size: 100% 100%;
+      }
+    }
+
+    $categories: "factory", "leaf", "mining", "log", "pool", "office";
+    @each $cat in $categories {
+      .#{$cat}:before {
+        background-image: url('#{$ltco_path_svgs}/icon-company-category-#{$cat}.svg');
+      }
+    }
+  }
+
+  &__lists {
+    @extend %triade-grid;
+
+    &__item {
+      figure {
+        width: 100%;
+        min-height: 200px;
+        padding-top: (100% / 16 * 9);
+        border-radius: 20px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* article {
+        p {
+          @include font-size(15px);
+        }
+      } */
+
+      footer {
+        ul {
+          display: flex;
+          align-items: center;
+
+          &:after {
+            content: '';
+            width: 100%;
+            height: 1px;
+            background-color: ltco_color('gray-300');
+            flex: 1;
+          }
+
+          > * {
+            margin-top: 0;
+            margin-right: 0.125rem;
+          }
+        }
+      }
+    }
+  }
+}

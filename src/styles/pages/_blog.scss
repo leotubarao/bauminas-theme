@@ -1,0 +1,59 @@
+.ltco_blog {
+  &__lists {
+    @extend %triade-grid;
+
+    &__item {
+      @include media-breakpoint-up(sm) {
+        &.sticky,
+        &.ltco_featured {
+          grid-column: 1/3;
+
+          figure {
+            padding-top: percentage(9 / 16);
+          }
+
+          footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+
+            .info {
+              order: 2;
+              min-width: 260px;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      figure {
+        background-size: cover;
+        background-position: center;
+        padding-top: percentage(9 / 16);
+
+        @include media-breakpoint-up(sm) {
+          padding-top: percentage(3 / 4);
+        }
+      }
+
+      footer {
+        padding-top: 1rem;
+        border-top: 1px solid ltco_color('gray-300');
+        margin-top: 1rem;
+
+        .info {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 0.75rem;
+        }
+      }
+    }
+
+    nav {
+      grid-column: 1/-1;
+    }
+  }
+}
