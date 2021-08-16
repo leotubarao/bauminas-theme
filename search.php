@@ -2,9 +2,8 @@
 <section class="container ltco-py-2 ltco-py-md-4 ltco-py-lg-6 ltco_search">
 
   <div class="row justify-content-between align-items-start">
-    <?php get_template_part( 'components/nav-sidebar' ); ?>
 
-    <section class="col-12 col-lg-9 col-xxl-8 mt-n2 p-0">
+    <section class="col-12 col-lg-9 col-xxl-8 order-lg-1 mt-n2 p-0">
     <?php if ( have_posts() ) : ?>
 
       <?php while ( have_posts() ) : the_post(); ?>
@@ -25,6 +24,8 @@
 
     <?php endif; ?>
     </section>
+
+    <?php get_sidebar(); ?>
   </div>
 
 </section>

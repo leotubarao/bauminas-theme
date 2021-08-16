@@ -1,5 +1,5 @@
-<aside class="ltco_sidebar col-12 col-lg-3">
-	<nav class="navbar">
+<aside class="ltco_sidebar col-12 col-lg-3 order-lg-0">
+	<nav class="navbar px-0">
     <div class="ltco_sidebar__nav collapse navbar-collapse show">
     <?php
       wp_nav_menu(
