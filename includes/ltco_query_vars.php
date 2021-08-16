@@ -30,3 +30,9 @@ function ltco_query_vars_filter( $vars ) {
 }
 
 add_filter( 'query_vars', 'ltco_query_vars_filter' );
+
+function ltco_query_blog( $query ) {
+  if ( $query->is_home() && $query->is_main_query() )
+    $query->set( 'post__not_in', get_option( 'sticky_posts' ) );
+}
+add_action( 'pre_get_posts', 'ltco_query_blog' );

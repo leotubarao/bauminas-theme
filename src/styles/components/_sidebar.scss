@@ -11,6 +11,13 @@
     margin-bottom: 0;
   }
 
+  &__header {
+    width: 100%;
+    background-color: ltco_color('darkblue');
+    color: ltco_color('white');
+    padding: 0.5rem 1rem;
+  }
+
   &__nav {
     &__menu.navbar-nav {
       margin-top: -1rem;
@@ -62,6 +69,23 @@
 
       > li > a {
         background-color: ltco_color('gray-300');
+      }
+    }
+  }
+
+  &__blog {
+    background-color: ltco_color('gray-100');
+    padding: 1rem;
+
+    &__item {
+      padding: 1rem 0;
+      border-top: 1px solid ltco_color('gray-300');
+
+      footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
       }
     }
   }

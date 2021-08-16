@@ -12,7 +12,7 @@ add_filter('previous_posts_link_attributes', 'ltco_previous_posts_link_attribute
 
 function ltco_post_navigation() {
   $nav = '<nav aria-label="Post navigation">
-    <ul class="list-unstyled d-flex justify-content-between mt-5 p-3 p-sm-0">
+    <ul class="list-unstyled d-flex justify-content-between mt-5 p-sm-0">
       <li>
         '.get_previous_posts_link('<span class="d-none d-sm-inline">Posts mais novos</span>').'
       </li>

@@ -26,7 +26,11 @@ require_once('ltco_thumbnail_image.php');
 
 require_once('ltco_title.php');
 
+require_once('ltco_human_time.php');
+
 require_once('ltco_post_navigation.php');
+
+require_once('ltco_single_post_functions.php');
 
 require_once('ltco_custom_post_type.php');
 

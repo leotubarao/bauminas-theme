@@ -224,3 +224,8 @@ main.ltco_main {
 .ltco_scroll_top {
   cursor: pointer;
 }
+
+
+.wp-block-image img {
+  @extend .img-fluid;
+}

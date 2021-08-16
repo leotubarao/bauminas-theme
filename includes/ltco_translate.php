@@ -64,6 +64,21 @@ function ltco_language ( $value ) {
   return $value;
 }
 
+function ltco_the_date() {
+  $dateFormat = ['br' => 'd/m/Y', 'en' => 'm/d/Y'];
+
+  if ( class_exists( 'WPGlobus' ) ) {
+    $lang = WPGlobus::Config()->language;
+
+    $format = ( empty($dateFormat[$lang]) ) ? $dateFormat['br'] : $dateFormat[$lang];
+
+    return get_post_time($format);
+  }
+
+  return get_post_time('d/m/Y');
+}
+
+
 $GLOBALS['ltco_translate'] = [
   'company' => [
     'title' => [
